@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Show</title>
+</head>
+<body>
+    
+    <Script>
+        var i = 0; //start point
+        var images = [];
+        var time = 3000;
+
+        //Image list
+        images[0] = 'img/Tiger.jpg';
+        images[1] = 'img/Antelopes.jpg';
+        images[2] = 'img/bird1.jpg';
+        images[3] = 'img/cub.jpg';
+        images[4] = 'img/Gorilla.jpg';
+        images[5] = 'img/Elephant.jpg';
+        images[6] = 'img/Kruger.jpg';
+        images[7] = 'img/Horses.jpg';
+        images[8] = 'img/Giraffe.jpg';
+
+        // change image
+        function changeImg() {
+            document.slide.src = images[i];
+
+            if (i < images.length-1) {
+                i++;
+            } else {
+                i = 0;
+            }
+            setTimeout('changeImg()', time);
+        }
+        window.onload = changeImg;
+
+    </Script>
+
+    <img name="slide" width="500" height="500">
+</body>
+</html>
